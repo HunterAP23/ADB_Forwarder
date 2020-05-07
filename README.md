@@ -42,8 +42,8 @@ you to access.
 14. Open up that URL in a browser on your PC. It will ask for the username and
 password you set previously, and you'll be met with a page containing a lot of
 options for controlling your phone's camera.
-   - If you wish to preview the video, select from the different "Video renderer"
-   options listed at the top of the page. "Browser" usually works for me.
+    - If you wish to preview the video, select from the different "Video renderer"
+    options listed at the top of the page. "Browser" usually works for me.
 15. Confirm that your camera works correctly on this webpage.
 16. To use your camera with OBS, create a new Browser Source and use the URL
 you got to connect to the IP Webcam browser page, use the following format to
