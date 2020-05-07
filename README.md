@@ -13,22 +13,22 @@ device is running stock, look up the method for your device).
 5. Connect your device to your PC with a USB cable.
 6. A popup should appear on your device asking if you trust the connection to
 your PC. Check the "Always allow from this computer" box and select "Allow".
-  - If the prompt does not appear, locate the ADB executable and open a console
-  or powershell window in that location, then type `adb devices`.
-  This should bring up the prompt and list the devices the ADB program can see.
+    - If the prompt does not appear, locate the ADB executable and open a console
+    or powershell window in that location, then type `adb devices`.
+    This should bring up the prompt and list the devices the ADB program can see.
 7. In the IP Webcam app, configure your setup and specify a port to use (or
   stick with the default 8080).
 8. Set up a username and password in the IP Webcam app, under the
 "Local broadcasting" section.
 9. On your PC, open the adb.json file and modify it to point to the adb
 executable, as well as put in the port that you specified in the IP Webcam app.
-  * Example JSON:
-  ```
-  {
-    "location": "C:\\Program Files\\something\somewhere\adb.exe",
-    "port": "8080"
-  }
-  ```
+    - Example JSON:
+    ```
+    {
+      "location": "C:\\Program Files\\something\somewhere\adb.exe",
+      "port": "8080"
+    }
+    ```
 10. Open a console or powershell window and navigate to where you keep this
 repository.
 11. Run the following command and you should see the program's output:
@@ -37,19 +37,19 @@ repository.
 If you do see any errors, you didn't follow the steps above correctly.
 13. On your device, IP Webcam should list a URL at the bottom of the screen for
 you to access.
- - For example, if you used port `8080` then the URL might look like
- `http://192.168.1.24:8080`
+   - For example, if you used port `8080` then the URL might look like
+   `http://192.168.1.24:8080`
 14. Open up that URL in a browser on your PC. It will ask for the username and
 password you set previously, and you'll be met with a page containing a lot of
 options for controlling your phone's camera.
- - If you wish to preview the video, select from the different "Video renderer"
- options listed at the top of the page. "Browser" usually works for me.
+   - If you wish to preview the video, select from the different "Video renderer"
+   options listed at the top of the page. "Browser" usually works for me.
 15. Confirm that your camera works correctly on this webpage.
 16. To use your camera with OBS, create a new Browser Source and use the URL
 you got to connect to the IP Webcam browser page, use the following format to
 access it:
-  - For example, with the normal URL of `http://192.168.1.24:8080` the Browser
-  Source URL should be `http://username:password@192.168.1.24:8080/video`.
+    - For example, with the normal URL of `http://192.168.1.24:8080` the Browser
+    Source URL should be `http://username:password@192.168.1.24:8080/video`.
     - Note that the username and password are used here, and they are completely
     visible when the Browser Source's properties are visible.
 
