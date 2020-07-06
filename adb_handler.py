@@ -10,7 +10,7 @@ class ADB:
         self.connect = None
         self.err_count = 0
 
-        config_file = open("adb.json", "r", newline="\r\n")
+        config_file = open("adb.json", "r")
         self.config = json.load(config_file)
         config_file.close()
 

@@ -25,7 +25,7 @@ executable, as well as put in the port that you specified in the IP Webcam app.
     - Example JSON:
     ```
     {
-      "location": "C:\\Program Files\\something\somewhere\adb.exe",
+      "location": "C:\\Program Files\\something\\somewhere\\adb.exe",
       "port": "8080"
     }
     ```
