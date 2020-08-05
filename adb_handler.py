@@ -2,6 +2,7 @@ import json
 import os.path as path
 import socket
 import subprocess as sp
+import shlex
 
 import ipaddress
 
@@ -21,11 +22,11 @@ class ADB:
         print("Got valid path \"{0}\".".format(self.config["location"]))
         if path.exists(loc):
             if path.isfile(loc):
-                if "adb.exe" not in path.split(loc)[1]:
-                    print("ERROR: \"{0}\" not a valid \"adb.exe\"".format(loc))
+                if "adb" not in path.split(loc)[1]:
+                    print("ERROR: \"{0}\" not a valid \"adb\"".format(loc))
                     self.err_count += 1
                     return False
-                print("Found \"adb.exe\" at \"{0}\"".format(loc))
+                print("Found \"adb\" at \"{0}\"".format(loc))
                 return True, loc
             else:
                 print("ERROR: \"{0}\" is not a file.".format(loc))
@@ -37,7 +38,7 @@ class ADB:
             return False
 
     def validate_adb(self):
-        check = sp.Popen("{0} devices".format(self.config["location"]), stdout=sp.PIPE, stderr=sp.PIPE)
+        check = sp.Popen(shlex.split("{0} devices".format(self.config["location"])), stdout=sp.PIPE, stderr=sp.PIPE)
         out, err = check.communicate()
         out_lines = "\n".join(out.decode().strip().replace("List of devices attached", "").splitlines())
         if check.returncode == 0:
@@ -67,7 +68,7 @@ class ADB:
 
     def bind(self):
         cmd = "{0} forward tcp:{1} tcp:{1}".format(self.config["location"], int(self.config["port"]))
-        self.connect = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.PIPE)
+        self.connect = sp.Popen(shlex.split(cmd), stdout=sp.PIPE, stderr=sp.PIPE)
         out, err = self.connect.communicate()
         if self.connect.returncode == 0:
             print("Port {0} should be forwarded correctly over ADB.".format(self.config["port"]))
@@ -78,7 +79,7 @@ class ADB:
     def parse_config(self):
         print("Parsing config file...")
         if self.config["location"] == "None":
-            print("ERROR: Location for \"adb.exe\" is not in the config.")
+            print("ERROR: Location for \"adb\" is not in the config.")
             self.err_count += 1
         else:
             print("Validating ADB file path...")
