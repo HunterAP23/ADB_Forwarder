@@ -4,6 +4,8 @@ Use your Android device's camera as webcam over USB instead of WiFi.
 This will cover the steps to set up IP Webcam on your device and be able to
 access it securely.
 
+Simple IP Webcam app recommendation: [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam)
+
 1. Install ADB for your system if you don't already have it.
 2. Install Python 3 on your system if you don't already have it
 (recommended Python 3.6 to 3.8).
