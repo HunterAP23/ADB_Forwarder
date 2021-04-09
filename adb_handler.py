@@ -142,7 +142,7 @@ class ADB:
                     print("Port {0} is valid.".format(self._port))
                     return
                 else:
-                    raise ValueError("Port {0} is not within the range of 1024 to 49151.".format(ports[i]))
+                    raise ValueError("Port {0} is not within the range of 1024 to 49151".format(ports[i]))
             except Exception as e:
                 print("Error parsing port \"{}\".".format(ports[i]))
                 if i + 1 == len(ports):
