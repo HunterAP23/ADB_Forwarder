@@ -1,3 +1,7 @@
+# THIS PROJECT IS ARCHIVED
+This project is superseded by applications such as Droidcam OBS and many others.
+IT will remain public for anyone who may want to fork and modify this admittedly weak implemenation of automating the ADB tethering used here.
+
 # ADB_Forwarder
 Use your Android device's camera as webcam over USB instead of WiFi.
 
